@@ -134,6 +134,7 @@
     "awk-text8": "NF and NR are number of fields and number or records, respectively.",
     "awk-text9": "FS is the “Field Separator”, that is, how should AWK know when a field ends; this is usually a space, semicolon, tab, etc.",
     "awk-text10": "OFS stands for “Output Field Separator”, or how to separate fields on output.",
+    "awk-text10-2": "In the following, 'in' refers to the name of an existing file, and 'out' to a non-existing one, to be created by the command.",
     "awk-text11": "1) Find lines containing string “AA” in a file, and print first field of the line, with fields separated by semicolon:",
     "awk-text12": " 2) Add columns 1 and 2 in a file:",
     "awk-text13": " 3) Add values in 5th column of a file:",
