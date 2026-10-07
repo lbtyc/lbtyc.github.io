@@ -441,6 +441,10 @@ ul.nav-links {
   padding: 1rem;
 }
 
+.main-cursos p {
+  text-align: justify;
+}
+
 .main-cursos h2{
   font-size: var(--subtitulo);
 }
