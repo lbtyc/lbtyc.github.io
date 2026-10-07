@@ -3,9 +3,8 @@
     "nav-publicaciones": "Publications",
     "nav-cursos": "Courses",
     "nav-miembros": "Members",
+    "nav-other": "Miscellaneous",
     "nav-contacto": "Contact",
-
-
 
 
     "home-title": "Laboratory of Theoretical and Computational Biophysics",
@@ -73,7 +72,6 @@
 
 
 
-
     "simulaciones-titulo": "Physics simulations",
     "simulaciones-text": "Here are some computer simulations of simple physical systems, written in Glowscript VPython, which allows them to be run in web browsers. These simulations are very useful for students, as they enable them to conduct experiments. For example, the “Pendulum” code allows students to measure the period of a simple pendulum and study how it depends on the length, the initial angle, and the mass. It also plots the velocity and force vectors and shows how they change over time. But these simulations don’t just replicate real-world experiments; they also let you experiment with Earth’s orbit around the Sun. For example, how would the planet’s orbital period change if its speed were greater?",
     "simulaciones-pendulo-titulo": "Pendulum",
@@ -112,12 +110,94 @@
 
 
 
+
+    "otros-titulo": "Useful tools",
+    "otros-awk-titulo": "AWK",
+    "otros-awk-text": "Programming language, very useful for data extraction",
+    "otros-sed-titulo": "SED",
+    "otros-sed-text": "Non-interactive editor, very useful for text manipulation",
+    "otros-bc-titulo": "BC",
+    "otros-bc-text": "Powerful arbitrary precision calculator",
+
+
+
+
+
+    "awk-titulo1":"AWK",
+    "awk-text1": "AWK (named after the initials of its three creators, Aho, Weinberger and Kernighan) is a programming language designed for data processing. As explained in the GNU manual for AWK:",
+    "awk-text2": "AWK searches files for lines than contain some given pattern. When the line matches the pattern, it performs specified oprations on that line. And it continues in this way, until if reaches the end of the input file.",
+    "awk-text3": "This makes it very useful and simple to use for data extraction of large data files.",
+    "awk-text4": "This page gives a very brief introduction to AWK, by way of simple examples. But understanding their structure, it is possible to later build more complex constructions. Of course, some googling will also show much more useful info about this basic tool.",
+    "awk-text5": "To help understand the following commands, you need to know that AWK takes the input files as arrays, organized in columns and rows. A few keywords:",
+    "awk-text6": "F means “Field”, and it represents columns of the array.",
+    "awk-text7": "R means “Record”, and it represents rows of the array.",
+    "awk-text8": "NF and NR are number of fields and number or records, respectively.",
+    "awk-text9": "FS is the “Field Separator”, that is, how should AWK know when a field ends; this is usually a space, semicolon, tab, etc.",
+    "awk-text10": "OFS stands for “Output Field Separator”, or how to separate fields on output.",
+    "awk-text11": "1) Find lines containing string “AA” in file, and print first field of the line, with fields separated by semicolon:",
+    "awk-text12": " 2) Add columns 1 and 2 in a file:",
+    "awk-text13": " 3) Add values in 5th column of file:",
+    "awk-text14": " 4) Remove first column in file:",
+    "awk-text15": " 5) Add the elements of each row in a file:",
+    "awk-text16": " 6) Add the elements of each column in a file:",
+    "otros-titulo2": "Some applications of AWK in BASH:",
+    "awk-text17": "7) Extract 4th field from variable 'line', and store it in variable 'VAR':",
+    "awk-text18": " 8) Count how many elements there are in variable 'VAR' and store it in variable 'HOWMANY':",
+    "awk-text19": "-F defines the Field Separator (equivalent to 'FS')",
+    "awk-text20": " 9) Add two columns from different files:",
+    "awk-text21": " 10) Paste columns in two files together, and then operate between columns (use formatting as in C):",
+    "awk-text22": " 11) Change all numbers less than -10 and all numbers greater than 10 in the infile, by -10 and 10 respectively:",
+    "awk-text23": "(Notice that the construction '() ? :' represents an 'if, then, else' command: () means if; ? means then; : means else)",
+    "awk-text24": " 12) Replace field number 5 in file file2 by field number 3 in file file1:",
+    "awk-text25": "and follow by rewriting the generated file, test.out, to fix the format:",
+
+
+
+
+
+    "sed-titulo1": "SED",
+    "sed-text1": "SED stands for “Stream EDitor”. We can think of SED as an object to which we give some instructions, and then feed with  a stream of data (file), on which it applies those instructions.",
+    "sed-text2": "The next few lines pretend to give a very brief introduction to SED, by way of simple examples. But understanding their structure, it is possible to later build more complex constructions to be used in SED. Of course, some googling will also show much more useful info about this extremely useful and powerful editor.",
+    "sed-text3": "1) Replace string 'AAA' with string 'BBB' in file (only first occurrence in each line):",
+    "sed-text4": "2) Replace string 'AAA' by string 'BBB' in file (all occurrences):",
+    "sed-text5": "3) Replace string 'AAA' by string 'BBB' in file, ignoring case (all occurrences):",
+    "sed-text6": "4) Remove lines containing string 'AAA' from file:",
+    "sed-text7": "5) Remove lines containing string 'AAA' from file, ignoring case:",
+    "sed-text8": "6) Remove blank lines in file:",
+    "sed-text9": "7) Remove everything between lines 11 and the end of the file:",
+    "sed-text10": "8) Print only line 10 of file:",
+    "sed-text11": "9) Print lines that contain abc or ABC or aBc, or ABc, etc:",
+    "otros-titulo2": "Some applications of SED in bash",
+    "sed-text12": "10) Remove blank lines (only empty lines, not lines with spaces) from all files with names ending in txt, and give the new files the same name, but with a 'tmp' prefix:",
+    "sed-text13": "11) Remove string 'something' from all files with names ending in txt, and give the new files the same name, but with a 'tmp' prefix:",
+
+
+
+
+
+    "bc-titulo1": "BC",
+    "bc-text1": ">BC is a command line, arbitrary precision calculator, but it can also be used to do math inside scripts, by piping operations to it. A few examples are presented below.",
+    "bc-text2": "To use it as a regular calculator, just open the program by running 'bc', and then enter any operation you want it to do. Use 'quit' to exit.",
+    "bc-text3": "Or, to use it via pipe, in the linux command line, or inside scripts, take a look at the next few examples:",
+    "bc-text4": "1) Calculate 3+5:",
+    "bc-text5": "2) Calculate 1/3:",
+    "bc-text6": "3) Store the multiplication of two variables, A and B, in variable C:",
+    "bc-text7": "4) Calculate (sin(3.14))^2 and store the result in variable x:",
+    "bc-text8": "5) Divide 6 by 3, writting 2 digits after the decimal point:",
+    "bc-text9": "The above are simple commands, but if used inside a script, they can take care of most (if not all) of the math needed.",
+
+
+
+
+
     "contacto-titulo": "Contact Us!",
     "contacto-text": "If you'd like to contact us, you can send us an email or fill out the form below:",
     "contacto-subtitulo": "Send us a message!",
     "contacto-mail": "Email address",
     "contacto-mensaje": "Message",
     "contacto-boton": "Send",
+
+
 
 
 
@@ -134,11 +214,5 @@
 
 
 
-
-
-
-
-
-    
 
 }
