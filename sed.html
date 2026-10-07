@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>LBTyC</title>
+        <link rel="icon" type="image/png" href="img/lablogo2.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="img/lablogo.png" alt="Logo LBTyC">
+                    <h2>LBTyC</h2>
+                </div>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a data-i18n="nav-inicio" href="index.html">Inicio</a></li>
+                    <li><a data-i18n="nav-publicaciones" href="publicaciones.html">Publicaciones</a></li>
+                    <li><a data-i18n="nav-cursos" href="cursos.html">Cursos</a></li>
+                    <li><a data-i18n="nav-software" href="software.html">Software</a></li>
+                    <li><a data-i18n="nav-otros" href="otros.html">Otros</a></li>
+                    <li><a data-i18n="nav-miembros" href="miembros.html">Miembros</a></li>
+                    <li><a data-i18n="nav-contacto" href="contacto.html">Contacto</a></li>
+                </ul>
+
+                <div class="language-toggle">
+                    <button id="btn-es" class="active">ES</button>
+                    <span>/</span>
+                    <button id="btn-en">EN</button>
+                </div>
+
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-otros">
+            <section class="otros">
+                <h1 data-i18n="sed-titulo1" >SED</h1>
+                <p data-i18n="sed-text1">SED significa «Stream EDitor» (editor de flujos). Podemos pensar en SED como un objeto al cual le damos instrucciones y un flujo de datos (por ejemplo, un archivo), sobre el cual SED opera dichas instrucciones.<br><br>Las próximas lineas pretenden dar una muy breve introducción a SED, a través de simples ejemplos de uso. Pero, entendiendo la estructura de esos ejemplos, es posible luego construir instrucciones mas complejas. Por supuesto, usando Google uno puede encontrar bastante mas información sobre este extremadamente útil y potente editor.</p>
+
+                </ul>
+                <p data-i18n="sed-text2">1) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo (solo la primera ocurrencia en cada linea):</p>
+                <pre class="otros-codigo"><code>sed 's/AAA/BBB/' < archivo </code></pre>
+                
+                
+                <p data-i18n="sed-text3">2) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo (todas las ocurrencias):</p>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/g' < archivo            # g significa "Global"</code></pre>
+
+
+                <p data-i18n="sed-text4"> 3) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo, ignorando la capitalización (todas las ocurrencias):</p>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/gI' < file           # I significa "Ignore case" </code></pre>
+
+
+                <p data-i18n="sed-text5"> 4) Remover lineas conteniendo la cadena «AAA» del archivo:</p>
+                <pre class="otros-codigo"><code>sed '/AAA/ d' archivo > nuevoarchivo </code></pre>
+
+
+                <p data-i18n="sed-text6"> 5) Remover lineas conteniendo la cadena «AAA» del archivo, ignorando la capitalización:</p>
+                <pre class="otros-codigo"><code> sed '/AAA/I d' archivo > nuevoarchivo       # d significa "Delete" </code></pre>
+
+
+                <p data-i18n="sed-text7">6) Remover lineas vacías del archivo:</p>
+                <pre class="otros-codigo"><code> sed '/^$/ d' archivo > nuevoarchivo         # ^$ significa "linea vacía" </code></pre>
+                
+                <p data-i18n="sed-text8"> 7) Remover todo entre las lineas 11 y el fin del archivo:</p>
+                <pre class="otros-codigo"><code>sed '11,$ d' < archivo                # $ significa "ultima linea" ​</code></pre>
+                
+                
+                <p data-i18n="sed-text9"> 8) Imprimir solo la linea 10 del archivo:</p>
+                <pre class="otros-codigo"><code> sed -n '10p' archivo ​</code></pre>
+                
+                
+		<p data-i18n="sed-text10"> 9) Imprimir las lineas que contengan abc o ABC o aBc o ABc, etc:</p>
+                <pre class="otros-codigo"><code> sed -n '/abc/I p' archivo > nuevoarchivo </code></pre>
+                
+		<h3 data-i18n="otros-titulo2";>Algunas aplicaciones de SED en bash</h3>
+		<p data-i18n="sed-text11">10) Remover lineas vacías (solo lineas vacías, no lineas con espacios) de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
+                <pre class="otros-codigo"><code> for i in *.txt; do sed '/^$/d' tmp$i; done > nuevoarchivo</code></pre>
+                
+                
+		<p data-i18n="sed-text12"> 11) Remover la cadena ‘algo’ de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
+                <pre class="otros-codigo"><code>for i in *.txt; do sed -e 's/algo//' tmp$i;done </code></pre>
+                <p style="padding-left:30px; text-align:justify; margin-bottom: -20px;"></p>
+            </section>
+
+        </main>
+
+
+        <footer>
+
+            <section class="footer-arriba">
+                <div class="footer-logo">
+                    <img src="img/lablogo.png" alt="Logo LBTyC">
+                </div>
+
+                <div class="footer-caja">
+
+                    <ul class="footer-links">
+                        
+                            <div class="column1">
+                                <h3 data-i18n="home-footer-conacto">Contacto</h3>
+                                <li>Universidad Nacional de San Martín (UNSAM)</li>
+                                <li>Edificio ITS, Campus Miguelete, 25 de Mayo y Francia (1650)</li>
+                                <li>easciutto@unsam.edu.ar</li>
+                            </div>
+                            <div class="column2">
+                                <h3>Links</h3>
+                                <li><a data-i18n="nav-inicio" href="index.html">Inicio</a></li>
+                                <li><a data-i18n="nav-publicaciones" href="publicaciones.html">Publicaciones</a></li>
+                                <li><a data-i18n="nav-cursos" href="cursos.html">Cursos</a></li>
+                            </div>
+                            <div class="column3">
+                                <li><a data-i18n="nav-software" href="software.html">Software</a></li>
+                                <li><a data-i18n="nav-miembros" href="miembros.html">Miembros</a></li>
+                                <li><a data-i18n="nav-contacto" href="contacto.html">Contacto</a></li>  
+                            </div>
+                    </ul>
+                    
+                </div>
+            </section>
+
+        
+        <section class="footer-abajo">
+            <div class="footer-icons">
+            <a target="_blank" href="https://www.instagram.com/labbioficomp.unsam?igsi=MWd5bGJ6amZua3pocA=="><img src="img/instagram.png" alt="icono de instagram"></a>
+            <a href="mailto:easciutto@unsam.edu.ar" target="_blank"><img src="img/mail.png" alt="icono de mail"></a>
+            </div>
+        </section>
+
+        </footer>
+
+
+    <script src="js/scripts.js"></script>    
+    </body>
+
+
+</html>
