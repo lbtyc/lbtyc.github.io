@@ -125,9 +125,9 @@
 
     "awk-titulo1":"AWK",
     "awk-text1": "AWK (named after the initials of its three creators, Aho, Weinberger and Kernighan) is a programming language designed for data processing. As explained in the GNU manual for AWK:",
-    "awk-text2": "AWK searches files for lines than contain some given pattern. When the line matches the pattern, it performs specified oprations on that line. And it continues in this way, until if reaches the end of the input file.",
+    "awk-text2": "AWK searches files for lines that contain some given pattern. When the line matches the pattern, it performs specified oprations on that line. And it continues in this way, until if reaches the end of the input file.",
     "awk-text3": "This makes it very useful and simple to use for data extraction of large data files.",
-    "awk-text4": "This page gives a very brief introduction to AWK, by way of simple examples. But understanding their structure, it is possible to later build more complex constructions. Of course, some googling will also show much more useful info about this basic tool.",
+    "awk-text4": "This page gives a very brief introduction to AWK, by way of simple examples. Understanding their structure, it is possible to later build more complex constructions. Of course, some googling will also show much more useful info about this basic tool.",
     "awk-text5": "To help understand the following commands, you need to know that AWK takes the input files as arrays, organized in columns and rows. A few keywords:",
     "awk-text6": "F means “Field”, and it represents columns of the array.",
     "awk-text7": "R means “Record”, and it represents rows of the array.",
