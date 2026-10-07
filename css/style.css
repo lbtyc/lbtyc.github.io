@@ -685,6 +685,10 @@ ul.nav-links {
   gap: 4rem;
   }
 
+  .main-miembros p {
+  text-align: justify;
+  }
+
   .hero-miembros img{
     width: 100%;
   }
