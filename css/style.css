@@ -628,6 +628,10 @@ ul.nav-links {
   gap: 2rem;
 }
 
+.main-software p {
+  text-align: justify;
+}
+
 .investigacion-slider{
   display: flex;
   justify-content: center;
