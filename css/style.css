@@ -237,6 +237,10 @@ ul.nav-links {
   align-content: center;
 }
 
+.main-inicio p {
+  text-align: justify;
+}
+
 .main-inicio h2{
   font-size: 1.8rem;
 }
