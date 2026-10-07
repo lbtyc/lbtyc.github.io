@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>LBTyC</title>
+        <link rel="icon" type="image/png" href="img/lablogo2.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="img/lablogo.png" alt="Logo LBTyC">
+                    <h2>LBTyC</h2>
+                </div>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a data-i18n="nav-inicio" href="index.html">Inicio</a></li>
+                    <li><a data-i18n="nav-publicaciones" href="publicaciones.html">Publicaciones</a></li>
+                    <li><a data-i18n="nav-cursos" href="cursos.html">Cursos</a></li>
+                    <li><a data-i18n="nav-software" href="software.html">Software</a></li>
+                    <li><a data-i18n="nav-otros" href="otros.html">Otros</a></li>
+                    <li><a data-i18n="nav-miembros" href="miembros.html">Miembros</a></li>
+                    <li><a data-i18n="nav-contacto" href="contacto.html">Contacto</a></li>
+                </ul>
+
+                <div class="language-toggle">
+                    <button id="btn-es" class="active">ES</button>
+                    <span>/</span>
+                    <button id="btn-en">EN</button>
+                </div>
+
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-otros">
+            <section class="otros">
+                <h1 data-i18n="awk-titulo1" >AWK</h1>
+                <p data-i18n="awk-text1">AWK (las iniciales de sus tres creadores, Aho, Weinberger y Kernighan) es un lenguaje de programación orientado al procesamiento de datos. Como se explica en el manual de GNU para AWK:</p>
+                <p data-i18n="awk-text2" style="padding-left:30px;text-align:justify;color:#8ab9ff;"><em>AWK busca en archivos líneas que contengan un cierto patrón. Cuando lo encuentra,  aplica operaciones específicas sobre dichas líneas. Y continúa de esta manera, hasta que alcanza el final del archivo de entrada.</em></p>
+                <p data-i18n="awk-text3">
+                    Este modo de operar convierte a AWK en una herramienta muy útil y simple, especialmente para la extracción de datos de archivos muy grandes.</p>
+                <p data-i18n="awk-text4">
+                    Esta página brinda una muy breve introducción a AWK, a través de ejemplos simples. Pero entendiendo su estructura, es posible hacer luego construcciones más complejas.</p>
+                <p data-i18n="awk-text5">
+                    Para entender los próximos comandos, es necesario saber que AWK interpreta los archivos de entrada como matrices, organizadas en columnas y filas. Algunas palabras clave:</p>
+                <ul class="otros-lista";>
+                    <li data-i18n="awk-text6">F significa 'Field' (campos), y representa las columnas de la matriz.</a></li>
+                    <li data-i18n="awk-text7">R significa 'Record' (registro), y representa las filas de la matriz.</a></li>                    
+                    <li data-i18n="awk-text8">NF y NR son los números de columnas (<em>fields</em>) y de filas (<em>records</em>), respectivamente.</li>
+                    <li data-i18n="awk-text9">FS es el 'Field Separator' (separador de campos), eso es, cómo AWK sabe donde un <em>field</em> termina; este es, usualmente, un espacio, punto y coma, tab, etc.</li>
+                    <li data-i18n="awk-text10">OFS significa 'Output Field Separator' (separador de campo de salida), es decir, como separar los campos en el archivo de salida.</li>
+                </ul>
+                <p data-i18n="awk-text11">1) Encontrar líneas que contengan la cadena «AA» en el archivo, e imprimir el primer campo (field) de la línea, con los campos separados por punto y coma:</p>
+                <pre class="otros-codigo"><code>awk 'BEGIN{FS=";"} /AA/ { print $1 }' archivo</code></pre>
+                <p data-i18n="awk-text12">2) Sumar las columnas 1 y 2 de un archivo:</p>
+                <pre class="otros-codigo"><code>awk '{ print $1+$2 }' archivo</code></pre>
+                <p data-i18n="awk-text13">3) Sumas los valores de la 5ta columna del archivo:</p>
+                <pre class="otros-codigo"><code>awk '{ sum += $5 } END { print sum }' archivo</code></pre>
+                <p data-i18n="awk-text14">4) Remover la primera columna del archivo:</p>
+                <pre class="otros-codigo"><code>awk 'BEGIN{FS=OFS=" "}{$1="";}1' archivo > nuevoarchivo</code></pre>
+                <p data-i18n="awk-text15">5) Sumar los elementos de cada fila en el archivo:</p>
+                <pre class="otros-codigo"><code>awk '{ for(i=1; i<=NF;i++) j+=$i; print j; j=0 }' archivo.txt</code></pre>
+                <p data-i18n="awk-text16">6) Sumar los elementos de cada columna en el archivo:</p>
+                <pre class="otros-codigo"><code>awk 'BEGIN {NR>1} {for (i=1;i<=NF;i++) a[i]+=$i} END {for (i=1;i<=NF;i++) printf a[i] OFS; printf "n"}' archivo.txt</code></pre>
+                <h3 data-i18n="awk-titulo2";>Algunas aplicaciones de AWK en bash</h3>
+                <p data-i18n="awk-text17">7) Extraer el 4to campo de la variable ‘linea’, y guardarla en ‘VAR’:</p>
+                <pre class="otros-codigo"><code>VAR=echo ${linea} | awk ' print $4 }'​</code></pre>
+                <p data-i18n="awk-text18">8) Contar cuantos elementos hay en la variable ‘VAR’ y guardar ese dato en ‘CUANTOS’:</p>
+                <pre class="otros-codigo"><code>CUANTOS=echo $VAR | awk -F " " '{print NF}'​</code></pre>
+		<p data-i18n="awk-text19">-F define al Field Separator (es equivalente a FS)</p>
+		<p data-i18n="awk-text20">9) Sumar dos columnas, cada una de un archivo distinto:</p>
+                <pre class="otros-codigo"><code>paste archivo1 archivo2 | awk '{print NR " " $1+$2 }'</code></pre>
+		<p data-i18n="awk-text21">10) Pegar columnas de dos archivos en uno, y luego operar entre esas columnas (el formato de salida es como el del lenguaje C):</p>
+                <pre class="otros-codigo"><code>paste archivo1 archivo2 | awk '{ printf "%3d %6.2fn",$1,$2-$5}' > nuevoarchivo</code></pre>
+		<p data-i18n="awk-text2">11) Cambiar todos los números menores a -10 y todos los números mayores a 10 en un archivo, por -10 y 10 respectivamente:</p>
+                <p data-i18n="awk-text23" style="padding-left:30px; margin-top: -30px; font-size: 16px;">(notar que la construcción '() ? :' representa comandos 'if, then, else': () significa if; ? significa then; : significa else)
+<!--                <br>'()' significa 'if' -->
+<!--                <br>'?' significa 'then' -->
+<!--                <br>':' significa 'else' -->
+                </p>
+                <pre class="otros-codigo"><code>cat archivo | awk '{for (i=1; i<=NF; i++) $i = ($i < -10) ? $i = -10 :($i > 10) ? $i = 10 : $i ; print }' >nuevoarchivo</code></pre>
+                <p style="padding-left:30px; text-align:justify; margin-bottom: -20px;"></p>
+		<p data-i18n="awk-text24">12) Reemplazar el campo numero 5 en el archivo2, por el campo numero 3 en el archivo1:</p>
+                <pre class="otros-codigo"><code>awk 'FNR==NR{a[NR]=$3;next}{$5=a[FNR]; print}' archivo1 archivo2 > nuevoarchivo</code></pre>
+		<p data-i18n="awk-text25">y continuar reescribiendo el archivo recién generado, nuevoarchivo, para arreglar su formato:</p>
+                <pre class="otros-codigo"><code>awk '{printf "%7s %4s %8s %8s %6sn", $1, $2, $3, $4, $5}' nuevoarchivo > archivo</code></pre>
+            </section>
+
+        </main>
+
+
+        <footer>
+
+            <section class="footer-arriba">
+                <div class="footer-logo">
+                    <img src="img/lablogo.png" alt="Logo LBTyC">
+                </div>
+
+                <div class="footer-caja">
+
+                    <ul class="footer-links">
+                        
+                            <div class="column1">
+                                <h3 data-i18n="home-footer-conacto">Contacto</h3>
+                                <li>Universidad Nacional de San Martín (UNSAM)</li>
+                                <li>Edificio ITS, Campus Miguelete, 25 de Mayo y Francia (1650)</li>
+                                <li>easciutto@unsam.edu.ar</li>
+                            </div>
+                            <div class="column2">
+                                <h3>Links</h3>
+                                <li><a data-i18n="nav-inicio" href="index.html">Inicio</a></li>
+                                <li><a data-i18n="nav-publicaciones" href="publicaciones.html">Publicaciones</a></li>
+                                <li><a data-i18n="nav-cursos" href="cursos.html">Cursos</a></li>
+                            </div>
+                            <div class="column3">
+                                <li><a data-i18n="nav-software" href="software.html">Software</a></li>
+                                <li><a data-i18n="nav-miembros" href="miembros.html">Miembros</a></li>
+                                <li><a data-i18n="nav-contacto" href="contacto.html">Contacto</a></li>  
+                            </div>
+                    </ul>
+                    
+                </div>
+            </section>
+
+        
+        <section class="footer-abajo">
+            <div class="footer-icons">
+            <a target="_blank" href="https://www.instagram.com/labbioficomp.unsam?igsi=MWd5bGJ6amZua3pocA=="><img src="img/instagram.png" alt="icono de instagram"></a>
+            <a href="mailto:easciutto@unsam.edu.ar" target="_blank"><img src="img/mail.png" alt="icono de mail"></a>
+            </div>
+        </section>
+
+        </footer>
+
+
+    <script src="js/scripts.js"></script>    
+    </body>
+
+
+</html>
