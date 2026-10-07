@@ -143,7 +143,7 @@
     "awk-text16": " 6) Add the elements of each column in a file:",
     "otros-titulo2": "Some applications of AWK in BASH:",
     "awk-text17": "7) Extract 4th field from variable 'line', and store it in variable 'VAR':",
-    "awk-text18": " 8) Count how many elements there are in variable 'VAR' and store it in variable 'HOWMANY':",
+    "awk-text18": " 8) Count how many elements there are in variable 'VAR' and store it in variable 'CUANTOS':",
     "awk-text19": "-F defines the Field Separator (equivalent to 'FS')",
     "awk-text20": " 9) Add two columns from different files:",
     "awk-text21": " 10) Paste columns in two files together, and then operate between columns (use formatting as in C):",
