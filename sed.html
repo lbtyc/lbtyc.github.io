@@ -52,46 +52,47 @@
         <main class="main-otros">
             <section class="otros">
                 <h1 data-i18n="sed-titulo1" >SED</h1>
-                <p data-i18n="sed-text1">SED significa «Stream EDitor» (editor de flujos). Podemos pensar en SED como un objeto al cual le damos instrucciones y un flujo de datos (por ejemplo, un archivo), sobre el cual SED opera dichas instrucciones.<br><br>Las próximas lineas pretenden dar una muy breve introducción a SED, a través de simples ejemplos de uso. Pero, entendiendo la estructura de esos ejemplos, es posible luego construir instrucciones mas complejas. Por supuesto, usando Google uno puede encontrar bastante mas información sobre este extremadamente útil y potente editor.</p>
+                <p data-i18n="sed-text1">SED significa «Stream EDitor» (editor de flujos). Podemos pensar en SED como un objeto al cual le damos instrucciones y un flujo de datos (por ejemplo, un archivo), sobre el cual SED opera dichas instrucciones.<br><br>Las próximas lineas pretenden dar una muy breve introducción a SED, a través de simples ejemplos de uso. Pero, entendiendo la estructura de esos ejemplos, es posible luego construir instrucciones mas complejas. Por supuesto, usando Google uno puede encontrar bastante mas información sobre este extremadamente útil y potente editor. </p>
+				<p data-i18n="sed-text1-2">En lo que sigue, 'in' se refiere al nombre de un archivo existente, y 'out' a uno no existente, a ser creado por el comando.</p>
 
                 </ul>
                 <p data-i18n="sed-text2">1) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo (solo la primera ocurrencia en cada linea):</p>
-                <pre class="otros-codigo"><code>sed 's/AAA/BBB/' < archivo </code></pre>
+                <pre class="otros-codigo"><code>sed 's/AAA/BBB/' < in </code></pre>
                 
                 
                 <p data-i18n="sed-text3">2) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo (todas las ocurrencias):</p>
-                <pre class="otros-codigo"><code> sed 's/AAA/BBB/g' < archivo            # g significa "Global"</code></pre>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/g' < in            # g significa "Global"</code></pre>
 
 
                 <p data-i18n="sed-text4"> 3) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo, ignorando la capitalización (todas las ocurrencias):</p>
-                <pre class="otros-codigo"><code> sed 's/AAA/BBB/gI' < file           # I significa "Ignore case" </code></pre>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/gI' < in           # I significa "Ignore case" </code></pre>
 
 
                 <p data-i18n="sed-text5"> 4) Remover lineas conteniendo la cadena «AAA» del archivo:</p>
-                <pre class="otros-codigo"><code>sed '/AAA/ d' archivo > nuevoarchivo </code></pre>
+                <pre class="otros-codigo"><code>sed '/AAA/ d' in > out </code></pre>
 
 
                 <p data-i18n="sed-text6"> 5) Remover lineas conteniendo la cadena «AAA» del archivo, ignorando la capitalización:</p>
-                <pre class="otros-codigo"><code> sed '/AAA/I d' archivo > nuevoarchivo       # d significa "Delete" </code></pre>
+                <pre class="otros-codigo"><code> sed '/AAA/I d' in > out       # d significa "Delete" </code></pre>
 
 
                 <p data-i18n="sed-text7">6) Remover lineas vacías del archivo:</p>
-                <pre class="otros-codigo"><code> sed '/^$/ d' archivo > nuevoarchivo         # ^$ significa "linea vacía" </code></pre>
+                <pre class="otros-codigo"><code> sed '/^$/ d' in > out         # ^$ significa "linea vacía" </code></pre>
                 
                 <p data-i18n="sed-text8"> 7) Remover todo entre las lineas 11 y el fin del archivo:</p>
-                <pre class="otros-codigo"><code>sed '11,$ d' < archivo                # $ significa "ultima linea" ​</code></pre>
+                <pre class="otros-codigo"><code>sed '11,$ d' < in                # $ significa "ultima linea" ​</code></pre>
                 
                 
                 <p data-i18n="sed-text9"> 8) Imprimir solo la linea 10 del archivo:</p>
-                <pre class="otros-codigo"><code> sed -n '10p' archivo ​</code></pre>
+                <pre class="otros-codigo"><code> sed -n '10p' in ​</code></pre>
                 
                 
 		<p data-i18n="sed-text10"> 9) Imprimir las lineas que contengan abc o ABC o aBc o ABc, etc:</p>
-                <pre class="otros-codigo"><code> sed -n '/abc/I p' archivo > nuevoarchivo </code></pre>
+                <pre class="otros-codigo"><code> sed -n '/abc/I p' in > out </code></pre>
                 
 		<h3 data-i18n="otros-titulo2";>Algunas aplicaciones de SED en bash</h3>
 		<p data-i18n="sed-text11">10) Remover lineas vacías (solo lineas vacías, no lineas con espacios) de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
-                <pre class="otros-codigo"><code> for i in *.txt; do sed '/^$/d' tmp$i; done > nuevoarchivo</code></pre>
+                <pre class="otros-codigo"><code> for i in *.txt; do sed '/^$/d' tmp$i; done > out</code></pre>
                 
                 
 		<p data-i18n="sed-text12"> 11) Remover la cadena ‘algo’ de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
