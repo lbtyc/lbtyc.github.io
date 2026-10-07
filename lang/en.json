@@ -158,6 +158,7 @@
 
     "sed-titulo1": "SED",
     "sed-text1": "SED stands for “Stream EDitor”. We can think of SED as an object to which we give some instructions, and then feed with  a stream of data (file), on which it applies those instructions.",
+    "sed-text1-2": "In the following, 'in' refers to the name of an existing file, and 'out' to a non-existing one, to be created by the command.",
     "sed-text2": "The next few lines pretend to give a very brief introduction to SED, by way of simple examples. But understanding their structure, it is possible to later build more complex constructions to be used in SED. Of course, some googling will also show much more useful info about this extremely useful and powerful editor.",
     "sed-text3": "1) Replace string 'AAA' with string 'BBB' in file (only first occurrence in each line):",
     "sed-text4": "2) Replace string 'AAA' by string 'BBB' in file (all occurrences):",
