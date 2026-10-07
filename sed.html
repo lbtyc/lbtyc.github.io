@@ -60,27 +60,27 @@
                 <pre class="otros-codigo"><code>sed 's/AAA/BBB/' < in </code></pre>
                 
                 
-                <p data-i18n="sed-text3">2) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo (todas las ocurrencias):</p>
-                <pre class="otros-codigo"><code> sed 's/AAA/BBB/g' < in            # g significa "Global"</code></pre>
+                <p data-i18n="sed-text3">2) Reemplazar todas las ocurrencias de la cadena 'AAA' por la cadena 'BBB' en el archivo ('g' significa 'Global'):</p>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/g' < in</code></pre>
 
 
-                <p data-i18n="sed-text4"> 3) Reemplazar la cadena ‘AAA’ por la cadena ‘BBB’ en el archivo, ignorando la capitalización (todas las ocurrencias):</p>
-                <pre class="otros-codigo"><code> sed 's/AAA/BBB/gI' < in           # I significa "Ignore case" </code></pre>
+                <p data-i18n="sed-text4"> 3) Reemplazar todas las ocurrencias de la cadena 'AAA' por la cadena 'BBB' en el archivo, ignorando la capitalización ('I' significa 'Ignore case'):</p>
+                <pre class="otros-codigo"><code> sed 's/AAA/BBB/gI' < in </code></pre>
 
 
-                <p data-i18n="sed-text5"> 4) Remover lineas conteniendo la cadena «AAA» del archivo:</p>
+                <p data-i18n="sed-text5"> 4) Remover lineas conteniendo la cadena 'AAA' del archivo:</p>
                 <pre class="otros-codigo"><code>sed '/AAA/ d' in > out </code></pre>
 
 
-                <p data-i18n="sed-text6"> 5) Remover lineas conteniendo la cadena «AAA» del archivo, ignorando la capitalización:</p>
-                <pre class="otros-codigo"><code> sed '/AAA/I d' in > out       # d significa "Delete" </code></pre>
+                <p data-i18n="sed-text6"> 5) Remover lineas conteniendo la cadena 'AAA' del archivo, ignorando la capitalización ('d' significa 'Delete'):</p>
+                <pre class="otros-codigo"><code> sed '/AAA/I d' in > out</code></pre>
 
 
-                <p data-i18n="sed-text7">6) Remover lineas vacías del archivo:</p>
-                <pre class="otros-codigo"><code> sed '/^$/ d' in > out         # ^$ significa "linea vacía" </code></pre>
+                <p data-i18n="sed-text7">6) Remover lineas vacías del archivo ('^$' significa 'linea vacía'):</p>
+                <pre class="otros-codigo"><code> sed '/^$/ d' in > out</code></pre>
                 
-                <p data-i18n="sed-text8"> 7) Remover todo entre las lineas 11 y el fin del archivo:</p>
-                <pre class="otros-codigo"><code>sed '11,$ d' < in                # $ significa "ultima linea" ​</code></pre>
+                <p data-i18n="sed-text8"> 7) Remover todo entre las lineas 11 y el fin del archivo ('$' significa 'ultima linea'):</p>
+                <pre class="otros-codigo"><code>sed '11,$ d' < in​</code></pre>
                 
                 
                 <p data-i18n="sed-text9"> 8) Imprimir solo la linea 10 del archivo:</p>
@@ -91,11 +91,11 @@
                 <pre class="otros-codigo"><code> sed -n '/abc/I p' in > out </code></pre>
                 
 		<h3 data-i18n="otros-titulo2";>Algunas aplicaciones de SED en bash</h3>
-		<p data-i18n="sed-text11">10) Remover lineas vacías (solo lineas vacías, no lineas con espacios) de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
+		<p data-i18n="sed-text11">10) Remover lineas vacías (solo lineas vacías, no lineas con espacios) de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo 'tmp':</p>
                 <pre class="otros-codigo"><code> for i in *.txt; do sed '/^$/d' tmp$i; done > out</code></pre>
                 
                 
-		<p data-i18n="sed-text12"> 11) Remover la cadena ‘algo’ de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo «tmp»:</p>
+		<p data-i18n="sed-text12"> 11) Remover la cadena ‘algo’ de todos los archivos cuyos nombres terminan en txt, y dar a los nuevos archivos el mismo nombre, pero con el prefijo 'tmp':</p>
                 <pre class="otros-codigo"><code>for i in *.txt; do sed -e 's/algo//' tmp$i;done </code></pre>
                 <p style="padding-left:30px; text-align:justify; margin-bottom: -20px;"></p>
             </section>
