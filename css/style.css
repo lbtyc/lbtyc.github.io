@@ -575,6 +575,42 @@ ul.nav-links {
   font-size: var(--cuerpo);
 }
 
+                /*     OTROS      */
+
+.main-otros{
+  display: flex;
+  margin: 2rem;
+}
+
+.otros{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.otros-lista{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left:30px;
+}
+
+.otros-lista a{
+  color: var(--celeste);
+  font-size: var(--cuerpo);
+}
+
+.otros-codigo {
+  background-color: #8ab9ff; /* Fondo oscuro tipo terminal (puedes usar #f4f4f4 para fondo claro) */
+  color: #000000;            /* Color del texto */
+  padding: 12px 16px;        /* Espaciado interno */
+  margin-top: -30px;
+  border-radius: 6px;        /* Bordes redondeados */
+  font-family: 'Courier New', Courier, monospace; /* Fuente de código */
+  font-size: 14px;
+  overflow-x: auto;          /* Agrega barra de desplazamiento si el comando es muy largo */
+}
+
                   /*   SOFTWARE        */
 
 .main-software{
