@@ -161,17 +161,17 @@
     "sed-text1-2": "In the following, 'in' refers to the name of an existing file, and 'out' to a non-existing one, to be created by the command.",
     "sed-text2": "The next few lines pretend to give a very brief introduction to SED, by way of simple examples. But understanding their structure, it is possible to later build more complex constructions to be used in SED. Of course, some googling will also show much more useful info about this extremely useful and powerful editor.",
     "sed-text3": "1) Replace string 'AAA' with string 'BBB' in file (only first occurrence in each line):",
-    "sed-text4": "2) Replace string 'AAA' by string 'BBB' in file (all occurrences):",
-    "sed-text5": "3) Replace string 'AAA' by string 'BBB' in file, ignoring case (all occurrences):",
+    "sed-text4": "2) Replace all occurrences of string 'AAA' by string 'BBB' in file ('g' stands for 'Global'):",
+    "sed-text5": "3) Replace all occurrences of string 'AAA' by string 'BBB' in file, ignoring case ('I' stands for 'Ignore case'):",
     "sed-text6": "4) Remove lines containing string 'AAA' from file:",
-    "sed-text7": "5) Remove lines containing string 'AAA' from file, ignoring case:",
-    "sed-text8": "6) Remove blank lines in file:",
-    "sed-text9": "7) Remove everything between lines 11 and the end of the file:",
+    "sed-text7": "5) Remove lines containing string 'AAA' from file, ignoring case ('d' stands for 'Delete'):",
+    "sed-text8": "6) Remove blank lines in file ('^$' stands for 'empty line'):",
+    "sed-text9": "7) Remove everything between lines 11 and the end of the file ('$' stands for 'last line'):",
     "sed-text10": "8) Print only line 10 of file:",
     "sed-text11": "9) Print lines that contain abc or ABC or aBc, or ABc, etc:",
     "otros-titulo2": "Some applications of SED in bash",
     "sed-text12": "10) Remove blank lines (only empty lines, not lines with spaces) from all files with names ending in txt, and give the new files the same name, but with a 'tmp' prefix:",
-    "sed-text13": "11) Remove string 'something' from all files with names ending in txt, and give the new files the same name, but with a 'tmp' prefix:",
+    "sed-text13": "11) Remove string 'algo' from all files with names ending in txt, and give the new files the same name, but with a 'tmp' prefix:",
 
 
 
