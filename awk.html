@@ -66,41 +66,42 @@
                     <li data-i18n="awk-text8">NF y NR son los números de columnas (<em>fields</em>) y de filas (<em>records</em>), respectivamente.</li>
                     <li data-i18n="awk-text9">FS es el 'Field Separator' (separador de campos), eso es, cómo AWK sabe donde un <em>field</em> termina; este es, usualmente, un espacio, punto y coma, tab, etc.</li>
                     <li data-i18n="awk-text10">OFS significa 'Output Field Separator' (separador de campo de salida), es decir, como separar los campos en el archivo de salida.</li>
+					<li data-i18n="awk-text10-2">En lo que sigue, 'in' se refiere al nombre de un archivo existente, y out a uno no existente, a ser creado por el comando.</li>
                 </ul>
                 <p data-i18n="awk-text11">1) Encontrar líneas que contengan la cadena «AA» en el archivo, e imprimir el primer campo (field) de la línea, con los campos separados por punto y coma:</p>
-                <pre class="otros-codigo"><code>awk 'BEGIN{FS=";"} /AA/ { print $1 }' archivo</code></pre>
+                <pre class="otros-codigo"><code>awk 'BEGIN{FS=";"} /AA/ { print $1 }' in</code></pre>
                 <p data-i18n="awk-text12">2) Sumar las columnas 1 y 2 de un archivo:</p>
-                <pre class="otros-codigo"><code>awk '{ print $1+$2 }' archivo</code></pre>
+                <pre class="otros-codigo"><code>awk '{ print $1+$2 }' in</code></pre>
                 <p data-i18n="awk-text13">3) Sumas los valores de la 5ta columna del archivo:</p>
-                <pre class="otros-codigo"><code>awk '{ sum += $5 } END { print sum }' archivo</code></pre>
+                <pre class="otros-codigo"><code>awk '{ sum += $5 } END { print sum }' in</code></pre>
                 <p data-i18n="awk-text14">4) Remover la primera columna del archivo:</p>
-                <pre class="otros-codigo"><code>awk 'BEGIN{FS=OFS=" "}{$1="";}1' archivo > nuevoarchivo</code></pre>
+                <pre class="otros-codigo"><code>awk 'BEGIN{FS=OFS=" "}{$1="";}1' in > out</code></pre>
                 <p data-i18n="awk-text15">5) Sumar los elementos de cada fila en el archivo:</p>
-                <pre class="otros-codigo"><code>awk '{ for(i=1; i<=NF;i++) j+=$i; print j; j=0 }' archivo.txt</code></pre>
+                <pre class="otros-codigo"><code>awk '{ for(i=1; i<=NF;i++) j+=$i; print j; j=0 }' in</code></pre>
                 <p data-i18n="awk-text16">6) Sumar los elementos de cada columna en el archivo:</p>
-                <pre class="otros-codigo"><code>awk 'BEGIN {NR>1} {for (i=1;i<=NF;i++) a[i]+=$i} END {for (i=1;i<=NF;i++) printf a[i] OFS; printf "n"}' archivo.txt</code></pre>
+                <pre class="otros-codigo"><code>awk 'BEGIN {NR>1} {for (i=1;i<=NF;i++) a[i]+=$i} END {for (i=1;i<=NF;i++) printf a[i] OFS; printf "n"}' in </code></pre>
                 <h3 data-i18n="awk-titulo2";>Algunas aplicaciones de AWK en bash</h3>
-                <p data-i18n="awk-text17">7) Extraer el 4to campo de la variable ‘linea’, y guardarla en ‘VAR’:</p>
+                <p data-i18n="awk-text17">7) Extraer el 4to campo de la variable 'linea', y guardarla en 'VAR':</p>
                 <pre class="otros-codigo"><code>VAR=echo ${linea} | awk ' print $4 }'​</code></pre>
-                <p data-i18n="awk-text18">8) Contar cuantos elementos hay en la variable ‘VAR’ y guardar ese dato en ‘CUANTOS’:</p>
+                <p data-i18n="awk-text18">8) Contar cuantos elementos hay en la variable 'VAR' y guardar ese dato en 'CUANTOS':</p>
                 <pre class="otros-codigo"><code>CUANTOS=echo $VAR | awk -F " " '{print NF}'​</code></pre>
 		<p data-i18n="awk-text19">-F define al Field Separator (es equivalente a FS)</p>
 		<p data-i18n="awk-text20">9) Sumar dos columnas, cada una de un archivo distinto:</p>
-                <pre class="otros-codigo"><code>paste archivo1 archivo2 | awk '{print NR " " $1+$2 }'</code></pre>
+                <pre class="otros-codigo"><code>paste in1 in2 | awk '{print NR " " $1+$2 }'</code></pre>
 		<p data-i18n="awk-text21">10) Pegar columnas de dos archivos en uno, y luego operar entre esas columnas (el formato de salida es como el del lenguaje C):</p>
-                <pre class="otros-codigo"><code>paste archivo1 archivo2 | awk '{ printf "%3d %6.2fn",$1,$2-$5}' > nuevoarchivo</code></pre>
+                <pre class="otros-codigo"><code>paste in1 in2 | awk '{ printf "%3d %6.2fn",$1,$2-$5}' > out</code></pre>
 		<p data-i18n="awk-text2">11) Cambiar todos los números menores a -10 y todos los números mayores a 10 en un archivo, por -10 y 10 respectivamente:</p>
                 <p data-i18n="awk-text23" style="padding-left:30px; margin-top: -30px; font-size: 16px;">(notar que la construcción '() ? :' representa comandos 'if, then, else': () significa if; ? significa then; : significa else)
 <!--                <br>'()' significa 'if' -->
 <!--                <br>'?' significa 'then' -->
 <!--                <br>':' significa 'else' -->
                 </p>
-                <pre class="otros-codigo"><code>cat archivo | awk '{for (i=1; i<=NF; i++) $i = ($i < -10) ? $i = -10 :($i > 10) ? $i = 10 : $i ; print }' >nuevoarchivo</code></pre>
+                <pre class="otros-codigo"><code>cat in | awk '{for (i=1; i<=NF; i++) $i = ($i < -10) ? $i = -10 :($i > 10) ? $i = 10 : $i ; print }' >out</code></pre>
                 <p style="padding-left:30px; text-align:justify; margin-bottom: -20px;"></p>
-		<p data-i18n="awk-text24">12) Reemplazar el campo numero 5 en el archivo2, por el campo numero 3 en el archivo1:</p>
-                <pre class="otros-codigo"><code>awk 'FNR==NR{a[NR]=$3;next}{$5=a[FNR]; print}' archivo1 archivo2 > nuevoarchivo</code></pre>
-		<p data-i18n="awk-text25">y continuar reescribiendo el archivo recién generado, nuevoarchivo, para arreglar su formato:</p>
-                <pre class="otros-codigo"><code>awk '{printf "%7s %4s %8s %8s %6sn", $1, $2, $3, $4, $5}' nuevoarchivo > archivo</code></pre>
+		<p data-i18n="awk-text24">12) Reemplazar el campo numero 5 en el archivo in2, por el campo numero 3 en el in1:</p>
+                <pre class="otros-codigo"><code>awk 'FNR==NR{a[NR]=$3;next}{$5=a[FNR]; print}' in1 in2 > out</code></pre>
+		<p data-i18n="awk-text25">y continuar reescribiendo el archivo recién generado, out, para arreglar su formato:</p>
+                <pre class="otros-codigo"><code>awk '{printf "%7s %4s %8s %8s %6sn", $1, $2, $3, $4, $5}' out > out2</code></pre>
             </section>
 
         </main>
